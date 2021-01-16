@@ -1,10 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import {} from './styles';
+import MentoraLogo from '../../assets/mentora-logo.png';
+import { Container, Logo, Button } from './styles';
 
 const Home = () => {
   return (
-    <h1>Home</h1>
+    <Container>
+      <Logo src={MentoraLogo}/>
+
+      <div>
+        <Button>
+          <span>Entrar</span>
+        </Button>
+        <Link>
+          Cadastrar
+        </Link>
+      </div>
+    </Container>
   );
 }
 
