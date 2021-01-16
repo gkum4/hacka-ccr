@@ -6,6 +6,7 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     outline: 0;
+    font-family: 'Rubik', sans-serif;
   }
 
   body {
@@ -13,6 +14,8 @@ export default createGlobalStyle`
   }
   
   button {
+    border: none;
+    background: none;
     cursor: pointer;
   }
 `;
