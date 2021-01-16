@@ -64,4 +64,4 @@
 - Cada agendamento deve durar 1h exatamente;
 - Os agendamentos devem estar disponiveis entre 8h e 18h (primeiro às 8h, último às 17h);
 - O aluno não pode agendar mentoria em um horário já ocupado;
-- O aluno não pode agendar mentores em um horário que já passou;
+- O aluno não pode agendar mentoria em um horário que já passou;
