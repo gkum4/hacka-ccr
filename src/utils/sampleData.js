@@ -1,3 +1,6 @@
+import couseSample1 from '../assets/course-sample1.png';
+import couseSample2 from '../assets/course-sample2.png';
+
 export const jobsExample = [
   {
     name: 'Jovem Aprendiz Business',
@@ -51,7 +54,7 @@ export const jobsExample = [
 
 export const sampleUserData = {
   name: 'Lucas',
-  role: 'Auxiliar Administrativo',
+  role: 'Jovem Aprendiz',
   mentorships: [
     {
       name: 'Teste Vocacional',
@@ -68,19 +71,82 @@ export const sampleUserData = {
       date: '10/02/21 - 15:00',
       link: 'https://meet.google.com/new',
     },
+    {
+      name: 'Acompanhamento Pessoal',
+      date: '10/02/21 - 15:00',
+      link: 'https://meet.google.com/new',
+    },
+    {
+      name: 'Acompanhamento Pessoal',
+      date: '10/02/21 - 15:00',
+      link: 'https://meet.google.com/new',
+    },
+    {
+      name: 'Acompanhamento Pessoal',
+      date: '10/02/21 - 15:00',
+      link: 'https://meet.google.com/new',
+    },
+    {
+      name: 'Acompanhamento Pessoal',
+      date: '10/02/21 - 15:00',
+      link: 'https://meet.google.com/new',
+    },
+    {
+      name: 'Acompanhamento Pessoal',
+      date: '10/02/21 - 15:00',
+      link: 'https://meet.google.com/new',
+    },
+    {
+      name: 'Acompanhamento Pessoal',
+      date: '10/02/21 - 15:00',
+      link: 'https://meet.google.com/new',
+    },
+    {
+      name: 'Acompanhamento Pessoal',
+      date: '10/02/21 - 15:00',
+      link: 'https://meet.google.com/new',
+    },
   ],
   courses: [
     {
-
+      image: couseSample1,
+      progress: '30%',
     },
     {
-
+      image: couseSample2,
+      progress: '10%',
     },
     {
-
+      image: couseSample1,
+      progress: '30%',
     },
     {
-
+      image: couseSample2,
+      progress: '10%',
     },
+    {
+      image: couseSample1,
+      progress: '30%',
+    },
+    {
+      image: couseSample2,
+      progress: '10%',
+    },
+    {
+      image: couseSample1,
+      progress: '30%',
+    },
+    {
+      image: couseSample2,
+      progress: '10%',
+    },
+  ],
+}
+
+export const sampleFunctionData = {
+  aboutCompany: '',
+  employeeFunction: '',
+  employeeResponsibilities: [
+    '',
   ],
 }
