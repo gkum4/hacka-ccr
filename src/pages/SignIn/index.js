@@ -91,7 +91,7 @@ const SignIn = () => {
             />
             <Button type="submit">Entrar</Button>
 
-            <Link to="/forgot-password">esqueci minha senha</Link>
+            {/* <Link to="/forgot-password">esqueci minha senha</Link> */}
           </Form>
 
           <Link to="/signup">
