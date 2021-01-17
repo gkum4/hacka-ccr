@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { jobsExample } from '../../../utils/sampleData';
 import { Container, JobItem } from './styles';
 
 const JobsList = () => {
-  const [jobs] = useState(jobsExample); //setJobs
+  const [jobs, setJobs] = useState(jobsExample); //setJobs
+
+  useEffect(() => {
+    setJobs(jobsExample);
+  }, []);
   
   return (
     <Container>

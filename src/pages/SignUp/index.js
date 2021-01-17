@@ -14,8 +14,6 @@ import Button from '../../components/button';
 
 import getValidationsErrors from '../../utils/getValidationsErrors';
 
-import logo from '../../assets/text-logo.svg';
-
 import { Container, Content, Background, AnimationContainer, SideContainer } from './styles';
 
 const SignUp = () => {

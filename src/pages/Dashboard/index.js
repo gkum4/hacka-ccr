@@ -1,15 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
 import { sampleUserData } from '../../utils/sampleData';
-import mLogo from '../../assets/m-logo.svg';
-import itemIcon from '../../assets/item-icon.svg';
-import profileImg from '../../assets/profile.png';
 import { 
-  Container,
-  Header,
-  SideMenu,
-  Content,
   MentorshipContainer,
   MentorshipItem,
   CoursesContainer,
@@ -19,6 +11,18 @@ import DashboardTemplate from '../../components/DashboardTemplate';
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(sampleUserData);
+
+  useEffect(() => {
+    setUserData(sampleUserData);
+
+    document.getElementById('courses').addEventListener('wheel', function(e) {
+      if (e.deltaY > 0) {
+        document.getElementById('courses').scrollBy({left: 50 });
+      } else {
+        document.getElementById('courses').scrollBy({left: -50 });
+      }
+    });
+  }, []);
 
   return (
     <DashboardTemplate>
@@ -33,7 +37,7 @@ const Dashboard = () => {
             </div>
             
             <div>
-              <a href={item.link} target="_blank">Entrar na Mentoria</a>
+              <a href={item.link} target="_blank" rel="noreferrer">Entrar na Mentoria</a>
               <button><p>Reagendar</p></button>
             </div>
           </MentorshipItem>
@@ -43,7 +47,7 @@ const Dashboard = () => {
       <CoursesContainer>
         {userData.courses.length !== 0 && <h2>Treinamentos</h2>}
         
-        <div>
+        <div id="courses">
           {userData.courses.map(item => (
             <CourseItem image={item.image} progress={item.progress}>
               {!!item.progress && (

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { sampleUserData } from '../../utils/sampleData';
 import mLogo from '../../assets/m-logo.svg';
 import itemIcon from '../../assets/item-icon.svg';
+import exitIcon from '../../assets/exit-icon.svg';
 import profileImg from '../../assets/profile.png';
 import { 
   Container,
@@ -15,15 +16,20 @@ import {
 const DashboardTemplate = ({ children }) => {
   const [userData, setUserData] = useState(sampleUserData);
 
+  useEffect(() => {
+    setUserData(sampleUserData);
+  }, []);
+
   return (
     <Container>
       <Header>
         <Link to="/dashboard"><img src={mLogo} alt="Mentora"/></Link>
+        <button><img src={exitIcon} alt="sair"/></button>
       </Header>
 
       <div>
         <SideMenu>
-          <img src={profileImg} alt="Profile Image"/>
+          <img src={profileImg} alt="Profile"/>
 
           <div>
             <h1>Olá, {userData.name}!</h1>

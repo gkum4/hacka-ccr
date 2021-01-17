@@ -6,6 +6,7 @@ export const Container = styled.div`
   display: flex;
   height: 100vh;
   flex-direction: column;
+  overflow-y: auto;
 
   a {
     text-decoration: none;
@@ -23,6 +24,18 @@ export const Header = styled.div`
   display: flex;
   background: #001C28;
   padding: 15px;
+  justify-content: space-between;
+
+  button {
+    &:hover {
+      cursor: pointer;
+    }
+    
+    img {
+      width: 24px;
+      object-fit: contain;
+    }
+  }
 `;
 
 export const SideMenu = styled.div`
@@ -111,5 +124,6 @@ export const Content = styled.div`
   padding: 20px 46px;
   flex-direction: column;
   position: relative;
+  background: #fff;
 `;
 
