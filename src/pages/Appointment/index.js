@@ -64,6 +64,8 @@ const Appointment = () => {
   const history = useHistory();
 
   useEffect(() => {  
+    setMonthAvailability([]);
+
     setAvailableTimes(sampleAvailableTimes)
   }, []);
 
@@ -78,7 +80,6 @@ const Appointment = () => {
   }, []);
 
   const disabledDays = useMemo(() => {
-    setMonthAvailability([]);
     const dates = monthAvailability
       .filter(monthDay => monthDay.available === false)
       .map(monthDay => {
