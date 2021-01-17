@@ -43,7 +43,7 @@ const AuthProvider = ({ children }) => {
     
     history.push('/')
     setData({});
-  }, []);
+  }, [history]);
 
   return (
     <AuthContext.Provider
