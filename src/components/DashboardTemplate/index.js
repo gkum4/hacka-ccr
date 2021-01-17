@@ -14,7 +14,7 @@ import {
 } from './styles';
 
 const DashboardTemplate = ({ children }) => {
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState(sampleUserData);
 
   useEffect(() => {
     setUserData(sampleUserData);

@@ -124,5 +124,6 @@ export const Content = styled.div`
   padding: 20px 46px;
   flex-direction: column;
   position: relative;
+  background: #fff;
 `;
 

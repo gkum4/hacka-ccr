@@ -6,7 +6,7 @@ import userIcon from '../../assets/user-icon.svg';
 import { SupervisorContainer } from './styles';
 
 const FunctionDescription = () => {
-  const [functionData, setFunctionData] = useState();
+  const [functionData, setFunctionData] = useState(sampleFunctionData);
 
   useEffect(() => {
     setFunctionData(sampleFunctionData);

@@ -10,7 +10,7 @@ import {
 import DashboardTemplate from '../../components/DashboardTemplate';
 
 const Dashboard = () => {
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState(sampleUserData);
 
   useEffect(() => {
     setUserData(sampleUserData);
