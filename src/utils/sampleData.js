@@ -1,5 +1,8 @@
 import couseSample1 from '../assets/course-sample1.png';
 import couseSample2 from '../assets/course-sample2.png';
+import couseSample3 from '../assets/course-sample3.png';
+import couseSample4 from '../assets/course-sample4.png';
+import couseSample5 from '../assets/course-sample5.png';
 
 export const jobsExample = [
   {
@@ -102,28 +105,16 @@ export const sampleUserData = {
       progress: '60%',
     },
     {
-      image: couseSample1,
+      image: couseSample3,
       progress: '10%',
     },
     {
-      image: couseSample2,
+      image: couseSample4,
       progress: '0%',
     },
     {
-      image: couseSample1,
+      image: couseSample5,
       progress: '29%',
-    },
-    {
-      image: couseSample2,
-      progress: '21%',
-    },
-    {
-      image: couseSample1,
-      progress: '0%',
-    },
-    {
-      image: couseSample2,
-      progress: '0%',
     },
   ],
 }

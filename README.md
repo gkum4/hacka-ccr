@@ -1,4 +1,27 @@
-# Recuperação de senha
+# App - Mentora - Plataforma em desenvolvimento para o Hackathon CCR (2ª edição)
+https://app-mentora.netlify.app/
+## O que é
+- Plataforma online de acompanhamento do jovem trabalhador.
+- Website feito para interfaces desktop.
+## O que faz (ainda como demonstração somente)
+- Conecta o usuário com o time de RH da Mentora para prestar a melhor assistência possível.
+- Possibilita agendamentos de acordo com os horários disponíveis.
+- Mostra o progresso do usuário com relação aos seus estudos e nível de contrato profissional.
+- Apresenta os cursos em que o usuário está matriculado e o seu progresso.
+## Tecnologias utilizadas
+- ReactJS com React Hooks
+- React Router Dom
+- Styled Components
+- Yup
+## Como rodar em sua máquina
+```bash
+$ git clone https://github.com/gkum4/mentora.git
+$ cd mentora
+$ yarn
+$ yarn start
+```
+
+<!-- # Recuperação de senha
 
 **Requisito Funcional**
 
@@ -64,4 +87,4 @@
 - Cada agendamento deve durar 1h exatamente;
 - Os agendamentos devem estar disponiveis entre 8h e 18h (primeiro às 8h, último às 17h);
 - O aluno não pode agendar mentoria em um horário já ocupado;
-- O aluno não pode agendar mentoria em um horário que já passou;
+- O aluno não pode agendar mentoria em um horário que já passou; -->

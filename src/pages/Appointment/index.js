@@ -3,26 +3,24 @@ import { Link } from 'react-router-dom';
 
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
-
 import Daypicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 import { FiArrowLeft } from 'react-icons/fi';
+import mLogoBlack from '../../assets/m-logo-black.svg';
 
 import { useAuth } from '../../hooks/auth';
 
-import { Container, Content, Description, Calendar, Box } from './styles';
+import { Container, Content, Description, VerticalLine, Calendar, Box, AvailableTimes, TimesScroll } from './styles';
 
 const Appointment = () => {
-
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
   const [monthAvailability, setMonthAvailability] = useState([]);
 
-  const [appointments, setAppointments] = useState([]);
-
-  const { signOut, user } = useAuth();
+  const [descriptionText, setDescriptionText] = useState('');
+  const [selectedTime, setSelectedTime] = useState(-1);
 
   const hanldeDateChange = useCallback((day, modifiers) => {
     if (modifiers.available && !modifiers.disabled) {
@@ -68,47 +66,70 @@ const Appointment = () => {
           </p>
 
           <h3>DESCRIÇÃO DO ASSUNTO</h3>
-          <Box>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Risus lobortis in faucibus maecenas. Bibendum massa nibh dui hac 
-            fermentum diam enim eget. Ut at aliquam, metus viverra eu mauris 
-            habitant dolor. Integer neque massa enim sit nunc sagittis, 
-            habitant convallis pulvinar. Velit diam scelerisque.
-          </Box>
+          <Box 
+            placeholder="Gostaria de falar sobre..." 
+            value={descriptionText} 
+            onChange={(e) => setDescriptionText(e.target.value)}
+          />
         </Description>
+
+        <VerticalLine/>
         
         <Calendar>
-          <Daypicker
-            weekdaysShort={['D', 'S', 'T', 'Q', 'Q', 'S', 'S']}
-            fromMonth={new Date()}
-            disabledDays={[{ daysOfWeek: [0, 6] }, ...disabledDays]}
-            modifiers={{
-              available: { daysOfWeek: [1, 2, 3, 4, 5] },
-            }}
-            selectedDays={selectedDate}
-            onMonthChange={handleMonthChange}
-            onDayClick={hanldeDateChange}
-            months={[
-              'Janeiro',
-              'Fevereiro',
-              'Março',
-              'Abril',
-              'Maio',
-              'Junho',
-              'Julho',
-              'Agosto',
-              'Setembro',
-              'Outubro',
-              'Novembro',
-              'Dezembro',
-            ]}
-          />
+          <h2>Escolha uma Data e Hora</h2>
+
+          <div>
+            <Daypicker
+              weekdaysShort={['D', 'S', 'T', 'Q', 'Q', 'S', 'S']}
+              fromMonth={new Date()}
+              disabledDays={[{ before: new Date(), daysOfWeek: [0] }, ...disabledDays]}
+              modifiers={{
+                available: { daysOfWeek: [1, 2, 3, 4, 5, 6] },
+              }}
+              selectedDays={selectedDate}
+              onMonthChange={handleMonthChange}
+              onDayClick={hanldeDateChange}
+              months={[
+                'Janeiro',
+                'Fevereiro',
+                'Março',
+                'Abril',
+                'Maio',
+                'Junho',
+                'Julho',
+                'Agosto',
+                'Setembro',
+                'Outubro',
+                'Novembro',
+                'Dezembro',
+              ]}
+            />
+
+            <AvailableTimes selectedTime={selectedTime}>
+              <h4>{'dia'}</h4>
+
+              <TimesScroll>
+                <div>{'14:30'}</div>
+                <div>{'14:30'}</div>
+                <div>{'14:30'}</div>
+              </TimesScroll>
+
+              <button>
+                <p>Agendar</p>
+              </button>
+            </AvailableTimes>
+          </div>
+
         </Calendar>
 
         <Link to="/dashboard">
-          <FiArrowLeft />
+          <FiArrowLeft color="FF4A08" size={22}/>
         </Link>
-      </Content>      
+      </Content>    
+
+      <Link to="/dashboard">
+        <img alt="logo" src={mLogoBlack}/>
+      </Link>
     </Container>
   );
 }   
