@@ -9,8 +9,6 @@ import 'react-day-picker/lib/style.css';
 
 import { FiArrowLeft } from 'react-icons/fi';
 
-import { useAuth } from '../../hooks/auth';
-
 import { Container, Content, Description, Calendar, Box } from './styles';
 
 const Appointment = () => {
@@ -21,8 +19,6 @@ const Appointment = () => {
   const [monthAvailability, setMonthAvailability] = useState([]);
 
   const [appointments, setAppointments] = useState([]);
-
-  const { signOut, user } = useAuth();
 
   const hanldeDateChange = useCallback((day, modifiers) => {
     if (modifiers.available && !modifiers.disabled) {
