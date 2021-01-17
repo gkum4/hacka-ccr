@@ -16,6 +16,7 @@ export const Content = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background: #001C28;
 
   width: 50%;
 `;
