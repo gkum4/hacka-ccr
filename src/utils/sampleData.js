@@ -62,14 +62,8 @@ export const sampleUserData = {
     {
       id: 1,
       name: 'Teste Vocacional',
-      date: '20/01/21 - 15:00',
-      link: 'https://meet.google.com/new',
-    },
-    {
-      id: 2,
-      name: 'Acompanhamento Técnico',
-      date: '22/01/21 - 08:00',
-      link: 'https://meet.google.com/new',
+      date: '17/01/21 - 19:30',
+      link: 'https://meet.google.com/rit-wxno-iad',
     },
     {
       id: 3,
@@ -91,14 +85,8 @@ export const sampleUserData = {
     },
     {
       id: 6,
-      name: 'Acompanhamento Pessoal',
-      date: '12/03/21 - 15:00',
-      link: 'https://meet.google.com/new',
-    },
-    {
-      id: 7,
       name: 'Coleta de Feedbacks',
-      date: '27/03/21 - 15:00',
+      date: '12/03/21 - 15:00',
       link: 'https://meet.google.com/new',
     },
   ],
