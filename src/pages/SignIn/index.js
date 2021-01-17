@@ -61,7 +61,7 @@ const SignIn = () => {
         addToast({
           type: 'error',
           title: 'Error na autenticação',
-          description: 'Ocorreu um erro ao fazer login, tente novamente!',
+          description: 'Ocorreu um erro ao fazer login! Utilize o email test@mentora.com e senha 1234',
         });
       }
     },
@@ -88,10 +88,10 @@ const SignIn = () => {
             <Link to="/forgot-password">esqueci minha senha</Link>
           </Form>
 
-          {/* <Link to="/signup">
+          <Link to="/signup">
             <FiLogIn />
             Criar Conta
-          </Link> */}
+          </Link>
         </AnimationContainer>
 
         <SideContainer>

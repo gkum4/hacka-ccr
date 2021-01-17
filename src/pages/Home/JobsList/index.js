@@ -4,8 +4,8 @@ import { jobsExample } from '../../../utils/sampleData';
 import { Container, JobItem } from './styles';
 
 const JobsList = () => {
-  const [jobs, setJobs] = useState(jobsExample);
-
+  const [jobs] = useState(jobsExample); //setJobs
+  
   return (
     <Container>
       {jobs.map(item => (
