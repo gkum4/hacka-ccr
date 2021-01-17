@@ -3,12 +3,12 @@ import styled, { css } from 'styled-components';
 import Tooltip from '../tooltip';
 
 export const Container = styled.div`
-  background: #232129;
+  background: #c7c6ca;
   border-radius: 10px;
-  border: 2px solid #232129;
+  border: 2px solid #a09dab;
   padding: 16px;
   width: 100%;
-  color: #666360;
+  color: #a09dab;
 
   ${props =>
     props.isErrored &&
@@ -40,10 +40,10 @@ export const Container = styled.div`
     flex: 1;
     background: transparent;
     border: 0;
-    color: #f4ede8;
+    color: #636169;
 
     &::placeholder {
-      color: #666360;
+      color: #636169;
     }
   }
 

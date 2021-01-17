@@ -51,8 +51,6 @@ const SignIn = () => {
 
         history.push('/dashboard');
       } catch (error) {
-
-        console.log(error)
         if (error instanceof Yup.ValidationError) {
           const errors = getValidationsErrors(error);
 
