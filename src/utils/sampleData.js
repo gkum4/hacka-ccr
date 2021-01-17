@@ -142,3 +142,11 @@ export const sampleUserData = {
     },
   ],
 }
+
+export const sampleFunctionData = {
+  aboutCompany: '',
+  employeeFunction: '',
+  employeeResponsibilities: [
+    '',
+  ],
+}
