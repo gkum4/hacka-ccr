@@ -1,5 +1,5 @@
-import React, { useMemo, useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useMemo, useState, useCallback, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
@@ -9,9 +9,45 @@ import 'react-day-picker/lib/style.css';
 import { FiArrowLeft } from 'react-icons/fi';
 import mLogoBlack from '../../assets/m-logo-black.svg';
 
-import { useAuth } from '../../hooks/auth';
+import { sampleAvailableTimes } from '../../utils/sampleData';
+import { useAppointment } from '../../hooks/appointment';
+import { useToast } from '../../hooks/toast';
+import { 
+  Container, 
+  Content, 
+  Description, 
+  VerticalLine, 
+  Calendar, 
+  Box, 
+  AvailableTimes, 
+  TimesScroll,
+  TimeItem,
+} from './styles';
 
-import { Container, Content, Description, VerticalLine, Calendar, Box, AvailableTimes, TimesScroll } from './styles';
+const dayOfTheWeekDictionary = {
+  0: 'Domingo',
+  1: 'Segunda-Feira',
+  2: 'Terça-Feira',
+  3: 'Quarta-Feira',
+  4: 'Quinta-Feira',
+  5: 'Sexta-Feira',
+  6: 'Sábado',
+};
+
+const monthDictionary = {
+  0: 'Janeiro',
+  1: 'Fevereiro',
+  2: 'Março',
+  3: 'Abril',
+  4: 'Maio',
+  5: 'Junho',
+  6: 'Julho',
+  7: 'Agosto',
+  8: 'Setembro',
+  9: 'Outubro',
+  10: 'Novembro',
+  11: 'Dezembro',
+}
 
 const Appointment = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -19,9 +55,15 @@ const Appointment = () => {
 
   const [monthAvailability, setMonthAvailability] = useState([]);
 
+  const [availableTimes, setAvailableTimes] = useState(sampleAvailableTimes);
+
+  const [titleText, setTitleText] = useState('');
   const [descriptionText, setDescriptionText] = useState('');
   const [selectedTime, setSelectedTime] = useState(-1);
-  const [appointments, setAppointments] = useState([]);
+
+  const { addAppointment } = useAppointment();
+  const { addToast } = useToast();
+  const history = useHistory();
 
   const hanldeDateChange = useCallback((day, modifiers) => {
     if (modifiers.available && !modifiers.disabled) {
@@ -56,6 +98,31 @@ const Appointment = () => {
     return dates;
   }, [currentMonth, monthAvailability]);
 
+  const selectTime = useCallback((time) => {
+    setSelectedTime(time);
+  }, []);
+
+  const schedule = useCallback(() => {
+    if (descriptionText === '' || selectedTime === '' || titleText === '') {
+      return;
+    }
+
+    addAppointment({
+      link: 'https://meet.google.com/new',
+      description: descriptionText,
+      date: selectedDate.getDate() + '/' + selectedDate.getMonth()+1 + '/' + selectedDate.getFullYear() + ' - ' + selectedTime,
+      title: titleText,
+    });
+
+    addToast({
+      title: 'MENTORIA AGENDADA!', 
+      type: 'success', 
+      description: 'Agora que seu agendamento foi feito, você pode acompanhar sua próxima mentoria na sua tela inicial.'
+    });
+
+    history.push('/dashboard');
+  }, [titleText, addAppointment, descriptionText, selectedTime]);
+
   return (
     <Container>
       <Content>
@@ -66,10 +133,17 @@ const Appointment = () => {
             hora e nos informe o assunto que você deseja conversar sobre.
           </p>
 
+          <h3>ASSUNTO</h3>
+
+          <input 
+            value={titleText} 
+            onChange={(e) => setTitleText(e.target.value)}
+          />
+
           <h3>DESCRIÇÃO DO ASSUNTO</h3>
-          <Box 
-            placeholder="Gostaria de falar sobre..." 
-            value={descriptionText} 
+          <Box
+            placeholder="Gostaria de falar sobre..."
+            value={descriptionText}
             onChange={(e) => setDescriptionText(e.target.value)}
           />
         </Description>
@@ -107,15 +181,15 @@ const Appointment = () => {
             />
 
             <AvailableTimes selectedTime={selectedTime}>
-              <h4>{'dia'}</h4>
+              <h4>{dayOfTheWeekDictionary[selectedDate.getDay()] + ', ' + selectedDate.getDate() + ' ' + monthDictionary[selectedDate.getMonth()]}</h4>
 
               <TimesScroll>
-                <div>{'14:30'}</div>
-                <div>{'14:30'}</div>
-                <div>{'14:30'}</div>
+                {availableTimes.map(item => (
+                  <TimeItem onClick={() => selectTime(item)} selected={selectedTime === item}>{item}</TimeItem>
+                ))}
               </TimesScroll>
 
-              <button>
+              <button onClick={() => schedule()}>
                 <p>Agendar</p>
               </button>
             </AvailableTimes>

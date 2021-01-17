@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { sampleUserData } from '../../utils/sampleData';
 
+import { useAuth } from '../../hooks/auth';
 import mLogo from '../../assets/m-logo.svg';
 import {ReactComponent as ItemIcon} from '../../assets/item-icon.svg';
 import exitIcon from '../../assets/exit-icon.svg';
@@ -19,6 +20,7 @@ import {
 const DashboardTemplate = ({ children }) => {
   const [userData, setUserData] = useState(sampleUserData);
 
+  const { signOut } = useAuth();
   const { push } = useHistory();
 
   useEffect(() => {
@@ -33,7 +35,7 @@ const DashboardTemplate = ({ children }) => {
     <Container>
       <Header>
         <Link to="/dashboard"><img src={mLogo} alt="Mentora"/></Link>
-        <button><img src={exitIcon} alt="sair"/></button>
+        <button onClick={() => signOut()}><img src={exitIcon} alt="sair"/></button>
       </Header>
 
       <div>

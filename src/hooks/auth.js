@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState, useContext } from 'react';
-
+import { useHistory } from 'react-router-dom';
 const AuthContext = createContext({});
 
 const AuthProvider = ({ children }) => {
@@ -11,8 +11,11 @@ const AuthProvider = ({ children }) => {
       return { token, user: JSON.parse(user) };
     }
 
+
     return {};
   });
+
+  const history = useHistory();
 
   const signIn = useCallback(async ({ email, password }) => {
     const token = 'token';
@@ -37,6 +40,8 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem('@Mentora:token');
     localStorage.removeItem('@Mentora:user');
 
+    
+    history.push('/')
     setData({});
   }, []);
 

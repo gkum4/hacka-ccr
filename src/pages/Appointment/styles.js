@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -56,6 +56,16 @@ export const Description = styled.div`
     text-transform: uppercase;
     letter-spacing: 0.2em;
     margin-bottom: 24px;
+  }
+
+  input {
+    background: #F0F0F0;
+    border-radius: 15px;
+    display: flex;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
 `;
 
@@ -125,18 +135,23 @@ export const TimesScroll = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+`;
 
-  > div {
-    display: flex;
-    height: 43px;
-    width: 244px;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #FF4A08;
-    border-radius: 10px;
-    margin-bottom: 6px;
-    color: #FF4A08;
-    font-size: 16px;
-    cursor: pointer;
-  }
+export const TimeItem = styled.div`
+  display: flex;
+  height: 43px;
+  width: 244px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #FF4A08;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  color: #FF4A08;
+  font-size: 16px;
+  cursor: pointer;
+
+  ${({ selected }) => selected && css`
+    background: #FF4A08;
+    color: #fff;
+  `}
 `;

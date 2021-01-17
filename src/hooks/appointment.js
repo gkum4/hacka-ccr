@@ -1,34 +1,37 @@
 import React, { createContext, useContext, useCallback, useState } from 'react';
 import { uuid } from 'uuidv4';
 
+import { sampleUserData } from '../utils/sampleData';
+
 const AppointmentContext = createContext({});
 
 const AppointmentProvider = ({ children }) => {
-  const [appointment, setAppointment] = useState([]);
+  const [appointments, setAppointments] = useState(sampleUserData.mentorships);
 
   const addAppointment = useCallback(
-    ({ title, link, data }) => {
+    ({ link, date, description, title }) => {
       const id = uuid();   
 
       const obj = {
         id,        
-        title,
+        name: title,
+        description,
         link,
-        data,
+        date,
       };
 
-      setAppointment(state => [...state, obj]);
+      setAppointments(state => [obj, ...state]);
     },
     [],
   );
 
   const removeAppointment = useCallback((id) => {
-    setAppointment(state => state.filter(item => item.id !== id));
+    setAppointments(state => state.filter(item => item.id !== id));
   }, []);
 
   return (
     <AppointmentContext.Provider
-      value={{ appointment, addAppointment, removeAppointment }}
+      value={{ appointments, addAppointment, removeAppointment }}
     >
       {children}
     </AppointmentContext.Provider>
