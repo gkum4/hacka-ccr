@@ -4,8 +4,8 @@ const AuthContext = createContext({});
 
 const AuthProvider = ({ children }) => {
   const [data, setData] = useState(() => {
-    const token = localStorage.getItem(`@Mentora:${data.token}`);
-    const user = localStorage.getItem(`@Mentora:${data.user}`);
+    const token = localStorage.getItem(`@Mentora:token`);
+    const user = localStorage.getItem(`@Mentora:user`);
 
     if (token && user) {    
       return { token, user: JSON.parse(user) };
