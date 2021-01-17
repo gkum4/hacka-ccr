@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 
@@ -36,6 +36,9 @@ export const AnimationContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #001C28;
+  min-height: 100vh;
+  width: 50%;
 
   animation: ${appearFromLeft} 1s;
 
@@ -46,7 +49,11 @@ export const AnimationContainer = styled.div`
   }
 
   h1 {
-    margin-bottom: 24px;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 340px;
   }
 
   a {
@@ -62,7 +69,7 @@ export const AnimationContainer = styled.div`
   }
 
   > a {
-    color: #ff9000;
+    color: #FF4A08;
     display: block;
     margin-top: 24px;
     text-decoration: none;
@@ -76,13 +83,26 @@ export const AnimationContainer = styled.div`
     }
 
     &:hover {
-      color: ${shade(0.2, '#ff9000')};
+      color: ${shade(0.2, '#FF4A08')};
     }
+  }
+`;
+
+export const SideContainer = styled.div`
+  display: flex;
+  width: 50%;
+  min-height: 100vh;
+  padding: 46px;
+  flex-direction: row-reverse;
+  background: url(${signInBackground}) no-repeat center center;
+  background-size: cover;
+
+  img {
+    height: 22px;
+    object-fit: contain;
   }
 `;
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${signInBackground}) no-repeat center;
-  background-size: cover;
 `;

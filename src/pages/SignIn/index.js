@@ -13,9 +13,9 @@ import getValidationsErrors from '../../utils/getValidationsErrors';
 import Input from '../../components/input';
 import Button from '../../components/button';
 
-import logo from '../../assets/Logo.svg';
+import logo from '../../assets/text-logo.svg';
 
-import { Container, Content, AnimationContainer, Background } from './styles';
+import { Container, Content, AnimationContainer, SideContainer, Background } from './styles';
 
 const SignIn = () => {
   const formRef = useRef(null);
@@ -72,11 +72,11 @@ const SignIn = () => {
     <Container>
       <Content>
         <AnimationContainer>
-          <img src={logo} alt="Mentora" />
-
           <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Faça Login</h1>
+            <h1>Bem-vindo a sua plataforma de desenvolvimento pessoal.</h1>
+            
             <Input name="email" icon={FiMail} placeholder="email" />
+            
             <Input
               name="password"
               icon={FiLock}
@@ -88,11 +88,15 @@ const SignIn = () => {
             <Link to="/forgot-password">esqueci minha senha</Link>
           </Form>
 
-          <Link to="/signup">
+          {/* <Link to="/signup">
             <FiLogIn />
             Criar Conta
-          </Link>
+          </Link> */}
         </AnimationContainer>
+
+        <SideContainer>
+          <img src={logo} alt="Mentora"/>
+        </SideContainer>
       </Content>
       <Background />
     </Container>

@@ -48,3 +48,39 @@ export const jobsExample = [
     city: 'Curitiba - PR',
   },
 ];
+
+export const sampleUserData = {
+  name: 'Lucas',
+  role: 'Auxiliar Administrativo',
+  mentorships: [
+    {
+      name: 'Teste Vocacional',
+      date: '20/01/21 - 15:00',
+      link: 'https://meet.google.com/new',
+    },
+    {
+      name: 'Acompanhamento Técnico',
+      date: '22/01/21 - 08:00',
+      link: 'https://meet.google.com/new',
+    },
+    {
+      name: 'Acompanhamento Pessoal',
+      date: '10/02/21 - 15:00',
+      link: 'https://meet.google.com/new',
+    },
+  ],
+  courses: [
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+  ],
+}
