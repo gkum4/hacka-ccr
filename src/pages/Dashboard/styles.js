@@ -5,7 +5,7 @@ const sideMenuWidth = 26 * window.innerWidth/100;
 export const MentorshipContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: ${(window.innerHeight - 100)/2}px;
+  max-height: ${(window.innerHeight - 100)/2 - 20}px;
   overflow-y: auto;
   margin-bottom: 20px;
 
@@ -91,7 +91,7 @@ export const CoursesContainer = styled.div`
   }
 
   > div {
-    width: ${window.innerWidth - sideMenuWidth}px;
+    width: ${window.innerWidth - sideMenuWidth - 80}px;
     height: 37vh;
     display: flex;
     flex-direction: row;

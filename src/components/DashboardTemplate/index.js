@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { sampleUserData } from '../../utils/sampleData';
 
 import mLogo from '../../assets/m-logo.svg';
-import itemIcon from '../../assets/item-icon.svg';
+import {ReactComponent as ItemIcon} from '../../assets/item-icon.svg';
 import exitIcon from '../../assets/exit-icon.svg';
 import profileImg from '../../assets/profile.png';
 
@@ -37,7 +37,7 @@ const DashboardTemplate = ({ children }) => {
       </Header>
 
       <div>
-        <SideMenu>
+        <SideMenu currentHref={window.location.href.split('/')[window.location.href.split('/').length-1]}>
           <img src={profileImg} alt="Profile"/>
 
           <div>
@@ -45,28 +45,28 @@ const DashboardTemplate = ({ children }) => {
 
             <h2>{userData.role}</h2>
 
-            <Link>
-              <img src={itemIcon} alt="item icon"/>
+            <Link to='/function-description'>
+              <ItemIcon/>
               <p>Descrição da Função</p>
             </Link>
 
-            <Link>
-              <img src={itemIcon} alt="item icon"/>
-              <p>Plano de Carreira</p>
+            <Link to='/carreer-path'>
+              <ItemIcon/>
+              <p>Plano de Crescimento</p>
             </Link>
 
-            <Link>
-              <img src={itemIcon} alt="item icon"/>
+            <Link to='/dashboard'>
+              <ItemIcon/>
               <p>Cursos</p>
             </Link>
 
-            <Link>
-              <img src={itemIcon} alt="item icon"/>
+            <Link to='/dashboard'>
+              <ItemIcon/>
               <p>Desempenho Escolar</p>
             </Link>
 
-            <Link>
-              <img src={itemIcon} alt="item icon"/>
+            <Link to='/dashboard'>
+              <ItemIcon/>
               <p>Capacitações</p>
             </Link>
             

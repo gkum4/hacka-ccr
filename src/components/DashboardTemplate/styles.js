@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const sideMenuWidth = 26 * window.innerWidth/100;
 
@@ -23,7 +23,7 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   background: #001C28;
-  padding: 15px;
+  padding: 15px 22px;
   justify-content: space-between;
 
   button {
@@ -41,7 +41,7 @@ export const Header = styled.div`
 export const SideMenu = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${sideMenuWidth};
+  width: ${sideMenuWidth}px;
   background: #F0F0F0;
 
   img {
@@ -80,10 +80,10 @@ export const SideMenu = styled.div`
       text-decoration: none;
 
       &:hover {
-        text-decoration: underline;
+        text-decoration: underline #001c28;
       }
 
-      img {
+      svg {
         width: 20px;
         object-fit: contain;
         margin-right: 7px;
@@ -92,6 +92,44 @@ export const SideMenu = styled.div`
       p {
         font-size: 16px;
         color: #001c28;
+        text-transform: uppercase;
+      }
+    }
+
+    ${({ currentHref }) => {
+      let position;
+      currentHref === 'function-description' && (position = 3);
+      currentHref === 'carreer-path' && (position = 4);
+        
+      return css`
+        a:nth-child(${position}) {
+          > p {
+            color: #FF4A08;
+          }
+          &:hover {
+            text-decoration: underline #FF4A08;
+          }
+        }
+      `;
+    }}
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FF4A08;
+      padding: 7px 20px;
+      border-radius: 72px;
+      width: fit-content;
+      align-self: center;
+      position: absolute;
+      bottom: 51px;
+
+      p {
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
       }
     }
@@ -117,7 +155,6 @@ export const Button = styled.button`
     letter-spacing: 0.2em;
     text-transform: uppercase;
   }
-
 `;
 
 export const Content = styled.div`
@@ -125,6 +162,8 @@ export const Content = styled.div`
   padding: 20px 46px;
   flex-direction: column;
   position: relative;
+  width: ${window.innerWidth - sideMenuWidth}px;
   background: #fff;
+  color: #001C28;
 `;
 

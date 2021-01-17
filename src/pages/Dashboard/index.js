@@ -26,42 +26,44 @@ const Dashboard = () => {
 
   return (
     <DashboardTemplate>
-      <MentorshipContainer>
-        {userData.mentorships.length !== 0 && <h2>Próximas Mentorias</h2>}
-        
-        {userData.mentorships.map(item => (
-          <MentorshipItem>
-            <div>
-              <p>{item.date}</p>
-              <h3>{item.name}</h3>
-            </div>
-            
-            <div>
-              <a href={item.link} target="_blank" rel="noreferrer">Entrar na Mentoria</a>
-              <button><p>Reagendar</p></button>
-            </div>
-          </MentorshipItem>
-        ))}
-      </MentorshipContainer>
-
-      <CoursesContainer>
-        {userData.courses.length !== 0 && <h2>Treinamentos</h2>}
-        
-        <div id="courses">
-          {userData.courses.map(item => (
-            <CourseItem image={item.image} progress={item.progress}>
-              {!!item.progress && (
-                <div className="saleContainer">
-                  <p>{item.progress}</p>
-                </div>
-              )}
-              <div className="progressBar">
-                <div/>
+      <>
+        <MentorshipContainer>
+          {userData.mentorships.length !== 0 && <h2>Próximas Mentorias</h2>}
+          
+          {userData.mentorships.map(item => (
+            <MentorshipItem>
+              <div>
+                <p>{item.date}</p>
+                <h3>{item.name}</h3>
               </div>
-            </CourseItem>
+              
+              <div>
+                <a href={item.link} target="_blank" rel="noreferrer">Entrar na Mentoria</a>
+                <button><p>Reagendar</p></button>
+              </div>
+            </MentorshipItem>
           ))}
-        </div>
-      </CoursesContainer>
+        </MentorshipContainer>
+
+        <CoursesContainer>
+          {userData.courses.length !== 0 && <h2>Treinamentos</h2>}
+          
+          <div id="courses">
+            {userData.courses.map(item => (
+              <CourseItem image={item.image} progress={item.progress}>
+                {!!item.progress && (
+                  <div className="saleContainer">
+                    <p>{item.progress}</p>
+                  </div>
+                )}
+                <div className="progressBar">
+                  <div/>
+                </div>
+              </CourseItem>
+            ))}
+          </div>
+        </CoursesContainer>
+      </>
     </DashboardTemplate>
   );
 }
