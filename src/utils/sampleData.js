@@ -1,5 +1,8 @@
 import couseSample1 from '../assets/course-sample1.png';
 import couseSample2 from '../assets/course-sample2.png';
+import couseSample3 from '../assets/course-sample3.png';
+import couseSample4 from '../assets/course-sample4.png';
+import couseSample5 from '../assets/course-sample5.png';
 
 export const jobsExample = [
   {
@@ -57,36 +60,43 @@ export const sampleUserData = {
   role: 'Jovem Aprendiz',
   mentorships: [
     {
+      id: 1,
       name: 'Teste Vocacional',
       date: '20/01/21 - 15:00',
       link: 'https://meet.google.com/new',
     },
     {
+      id: 2,
       name: 'Acompanhamento Técnico',
       date: '22/01/21 - 08:00',
       link: 'https://meet.google.com/new',
     },
     {
+      id: 3,
       name: 'Acompanhamento Pessoal',
       date: '10/02/21 - 15:00',
       link: 'https://meet.google.com/new',
     },
     {
+      id: 4,
       name: 'Acompanhamento Acadêmico',
       date: '17/02/21 - 21:00',
       link: 'https://meet.google.com/new',
     },
     {
+      id: 5,
       name: 'Acompanhamento Técnico',
       date: '28/02/21 - 08:00',
       link: 'https://meet.google.com/new',
     },
     {
+      id: 6,
       name: 'Acompanhamento Pessoal',
       date: '12/03/21 - 15:00',
       link: 'https://meet.google.com/new',
     },
     {
+      id: 7,
       name: 'Coleta de Feedbacks',
       date: '27/03/21 - 15:00',
       link: 'https://meet.google.com/new',
@@ -102,28 +112,16 @@ export const sampleUserData = {
       progress: '60%',
     },
     {
-      image: couseSample1,
+      image: couseSample3,
       progress: '10%',
     },
     {
-      image: couseSample2,
+      image: couseSample4,
       progress: '0%',
     },
     {
-      image: couseSample1,
+      image: couseSample5,
       progress: '29%',
-    },
-    {
-      image: couseSample2,
-      progress: '21%',
-    },
-    {
-      image: couseSample1,
-      progress: '0%',
-    },
-    {
-      image: couseSample2,
-      progress: '0%',
     },
   ],
 }
@@ -138,3 +136,12 @@ export const sampleFunctionData = {
     'Controle de arquivos',
   ],
 }
+
+export const sampleAvailableTimes = [
+  '09:00',
+  '13:30',
+  '15:30',
+  '17:00',
+  '18:30',
+  '21:00',
+]

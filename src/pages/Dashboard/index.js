@@ -8,6 +8,7 @@ import {
   CourseItem,
 } from './styles';
 import DashboardTemplate from '../../components/DashboardTemplate';
+import { useAppointment } from '../../hooks/appointment';
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(sampleUserData);
@@ -24,13 +25,15 @@ const Dashboard = () => {
     });
   }, []);
 
+  const { appointments } = useAppointment();
+
   return (
     <DashboardTemplate>
       <>
         <MentorshipContainer>
           {userData.mentorships.length !== 0 && <h2>Próximas Mentorias</h2>}
           
-          {userData.mentorships.map(item => (
+          {appointments.map(item => (
             <MentorshipItem>
               <div>
                 <p>{item.date}</p>

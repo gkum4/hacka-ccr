@@ -101,6 +101,7 @@ export const CoursesContainer = styled.div`
 `;
 
 export const CourseItem = styled.div`
+  cursor: pointer;
   display: flex;
   flex: 0 0 auto;
   position: relative;
