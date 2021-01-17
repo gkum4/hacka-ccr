@@ -16,6 +16,7 @@ export const Content = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background: #001C28;
 
   width: 100%;
 `;
@@ -36,7 +37,6 @@ export const AnimationContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #001C28;
   min-height: 100vh;
   width: 50%;
 

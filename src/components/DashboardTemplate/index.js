@@ -1,24 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { sampleUserData } from '../../utils/sampleData';
+
 import mLogo from '../../assets/m-logo.svg';
 import itemIcon from '../../assets/item-icon.svg';
 import exitIcon from '../../assets/exit-icon.svg';
 import profileImg from '../../assets/profile.png';
+
 import { 
   Container,
   Header,
   SideMenu,
   Content,
+  Button
 } from './styles';
 
 const DashboardTemplate = ({ children }) => {
   const [userData, setUserData] = useState(sampleUserData);
 
+  const { push } = useHistory();
+
   useEffect(() => {
     setUserData(sampleUserData);
   }, []);
+
+  const handleBack = () => {
+    push('/appointment');
+  };
 
   return (
     <Container>
@@ -60,10 +69,10 @@ const DashboardTemplate = ({ children }) => {
               <img src={itemIcon} alt="item icon"/>
               <p>Capacitações</p>
             </Link>
-
-            <button>
+            
+            <Button onClick={handleBack}>   
               <p>Agendar Mentoria</p>
-            </button>
+            </Button>            
           </div>
         </SideMenu>
 

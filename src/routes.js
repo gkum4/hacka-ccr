@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import FunctionDescription from './pages/FunctionDescription';
+import Appointment from './pages/Appointment';
 
 const Routes = () => (
   <Switch>
@@ -15,6 +16,7 @@ const Routes = () => (
     <Route path="/Home" component={Home} />
     <Route path="/dashboard" component={Dashboard} />
     <Route path="/function-description" component={FunctionDescription} />
+    <Route path="/appointment" component={Appointment} />
   </Switch>
 );
 

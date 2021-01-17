@@ -95,28 +95,29 @@ export const SideMenu = styled.div`
         text-transform: uppercase;
       }
     }
-
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #FF4A08;
-      padding: 7px 20px;
-      border-radius: 72px;
-      width: fit-content;
-      align-self: center;
-      position: absolute;
-      bottom: 51px;
-
-      p {
-        color: #fff;
-        font-size: 14px;
-        font-weight: bold;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-      }
-    }
   }
+`;
+
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FF4A08;
+  padding: 7px 20px;
+  border-radius: 72px;
+  width: fit-content;
+  align-self: center;
+  position: absolute;
+  bottom: 51px;
+
+  p {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
 `;
 
 export const Content = styled.div`
