@@ -72,79 +72,64 @@ export const sampleUserData = {
       link: 'https://meet.google.com/new',
     },
     {
-      name: 'Acompanhamento Pessoal',
-      date: '10/02/21 - 15:00',
+      name: 'Acompanhamento Acadêmico',
+      date: '17/02/21 - 21:00',
+      link: 'https://meet.google.com/new',
+    },
+    {
+      name: 'Acompanhamento Técnico',
+      date: '28/02/21 - 08:00',
       link: 'https://meet.google.com/new',
     },
     {
       name: 'Acompanhamento Pessoal',
-      date: '10/02/21 - 15:00',
+      date: '12/03/21 - 15:00',
       link: 'https://meet.google.com/new',
     },
     {
-      name: 'Acompanhamento Pessoal',
-      date: '10/02/21 - 15:00',
-      link: 'https://meet.google.com/new',
-    },
-    {
-      name: 'Acompanhamento Pessoal',
-      date: '10/02/21 - 15:00',
-      link: 'https://meet.google.com/new',
-    },
-    {
-      name: 'Acompanhamento Pessoal',
-      date: '10/02/21 - 15:00',
-      link: 'https://meet.google.com/new',
-    },
-    {
-      name: 'Acompanhamento Pessoal',
-      date: '10/02/21 - 15:00',
-      link: 'https://meet.google.com/new',
-    },
-    {
-      name: 'Acompanhamento Pessoal',
-      date: '10/02/21 - 15:00',
+      name: 'Coleta de Feedbacks',
+      date: '27/03/21 - 15:00',
       link: 'https://meet.google.com/new',
     },
   ],
   courses: [
     {
       image: couseSample1,
-      progress: '30%',
+      progress: '70%',
     },
     {
       image: couseSample2,
-      progress: '10%',
+      progress: '60%',
     },
     {
       image: couseSample1,
-      progress: '30%',
+      progress: '10%',
     },
     {
       image: couseSample2,
-      progress: '10%',
+      progress: '0%',
     },
     {
       image: couseSample1,
-      progress: '30%',
+      progress: '29%',
     },
     {
       image: couseSample2,
-      progress: '10%',
+      progress: '21%',
     },
     {
       image: couseSample1,
-      progress: '30%',
+      progress: '0%',
     },
     {
       image: couseSample2,
-      progress: '10%',
+      progress: '0%',
     },
   ],
 }
 
 export const sampleFunctionData = {
-  aboutCompany: 'O Grupo CCR, antiga Companhia de Concessões Rodoviárias, é uma empresa brasileira de concessão de infraestrutura, transportes e serviços, uma das líderes na administração de rodovias no Brasil, com um total de 3,955 km administrados e faz parte dos mais importantes índices do mercado acionário brasileiro',
+  aboutCompany: 'O Grupo CCR, antiga Companhia de Concessões Rodoviárias, é uma empresa brasileira de concessão de infraestrutura, transportes e serviços, uma das líderes na administração de rodovias no Brasil, com um total de 3,955 km administrados e faz parte dos mais importantes índices do mercado acionário brasileiro.',
   employeeFunction: 'Sua missão será aprender e colocar em prática as rotinas de suporte aos times da CCR.',
   employeeResponsibilities: [
     'Auxiliar nas rotinas dos departamentos administrativos',

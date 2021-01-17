@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import FunctionDescription from './pages/FunctionDescription';
+import CarreerPath from './pages/CarreerPath';
 
 const Routes = () => (
   <Switch>
@@ -15,6 +16,7 @@ const Routes = () => (
     <Route path="/home" component={Home} />
     <Route path="/dashboard" component={Dashboard} />
     <Route path="/function-description" component={FunctionDescription} />
+    <Route path="/carreer-path" component={CarreerPath} />
   </Switch>
 );
 

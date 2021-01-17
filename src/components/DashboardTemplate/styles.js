@@ -23,7 +23,7 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   background: #001C28;
-  padding: 15px;
+  padding: 15px 22px;
   justify-content: space-between;
 
   button {
@@ -83,7 +83,7 @@ export const SideMenu = styled.div`
         text-decoration: underline #001c28;
       }
 
-      img {
+      svg {
         width: 20px;
         object-fit: contain;
         margin-right: 7px;
@@ -97,16 +97,20 @@ export const SideMenu = styled.div`
     }
 
     ${({ currentHref }) => {
-      if (currentHref === 'function-description') {
-        return css`
-          a:nth-child(3) > p {
+      let position;
+      currentHref === 'function-description' && (position = 3);
+      currentHref === 'carreer-path' && (position = 4);
+        
+      return css`
+        a:nth-child(${position}) {
+          > p {
             color: #FF4A08;
-            &:hover {
-              text-decoration: underline #FF4A08;
-            }
           }
-        `;
-      }
+          &:hover {
+            text-decoration: underline #FF4A08;
+          }
+        }
+      `;
     }}
 
     button {

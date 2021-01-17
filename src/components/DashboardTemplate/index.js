@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { sampleUserData } from '../../utils/sampleData';
 import mLogo from '../../assets/m-logo.svg';
-import itemIcon from '../../assets/item-icon.svg';
+import {ReactComponent as ItemIcon} from '../../assets/item-icon.svg';
 import exitIcon from '../../assets/exit-icon.svg';
 import profileImg from '../../assets/profile.png';
 import { 
@@ -37,27 +37,27 @@ const DashboardTemplate = ({ children }) => {
             <h2>{userData.role}</h2>
 
             <Link to='/function-description'>
-              <img src={itemIcon} alt="item icon"/>
+              <ItemIcon/>
               <p>Descrição da Função</p>
             </Link>
 
-            <Link to='/dashboard'>
-              <img src={itemIcon} alt="item icon"/>
-              <p>Plano de Carreira</p>
+            <Link to='/carreer-path'>
+              <ItemIcon/>
+              <p>Plano de Crescimento</p>
             </Link>
 
             <Link to='/dashboard'>
-              <img src={itemIcon} alt="item icon"/>
+              <ItemIcon/>
               <p>Cursos</p>
             </Link>
 
             <Link to='/dashboard'>
-              <img src={itemIcon} alt="item icon"/>
+              <ItemIcon/>
               <p>Desempenho Escolar</p>
             </Link>
 
             <Link to='/dashboard'>
-              <img src={itemIcon} alt="item icon"/>
+              <ItemIcon/>
               <p>Capacitações</p>
             </Link>
 
