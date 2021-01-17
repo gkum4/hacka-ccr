@@ -21,6 +21,7 @@ const Appointment = () => {
 
   const [descriptionText, setDescriptionText] = useState('');
   const [selectedTime, setSelectedTime] = useState(-1);
+  const [appointments, setAppointments] = useState([]);
 
   const hanldeDateChange = useCallback((day, modifiers) => {
     if (modifiers.available && !modifiers.disabled) {
