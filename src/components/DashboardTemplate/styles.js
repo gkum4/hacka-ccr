@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const sideMenuWidth = 26 * window.innerWidth/100;
 
@@ -41,7 +41,7 @@ export const Header = styled.div`
 export const SideMenu = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${sideMenuWidth};
+  width: ${sideMenuWidth}px;
   background: #F0F0F0;
 
   img {
@@ -80,7 +80,7 @@ export const SideMenu = styled.div`
       text-decoration: none;
 
       &:hover {
-        text-decoration: underline;
+        text-decoration: underline #001c28;
       }
 
       img {
@@ -95,6 +95,19 @@ export const SideMenu = styled.div`
         text-transform: uppercase;
       }
     }
+
+    ${({ currentHref }) => {
+      if (currentHref === 'function-description') {
+        return css`
+          a:nth-child(3) > p {
+            color: #FF4A08;
+            &:hover {
+              text-decoration: underline #FF4A08;
+            }
+          }
+        `;
+      }
+    }}
 
     button {
       display: flex;
@@ -124,6 +137,8 @@ export const Content = styled.div`
   padding: 20px 46px;
   flex-direction: column;
   position: relative;
+  width: ${window.innerWidth - sideMenuWidth}px;
   background: #fff;
+  color: #001C28;
 `;
 

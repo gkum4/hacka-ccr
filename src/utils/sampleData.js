@@ -144,9 +144,12 @@ export const sampleUserData = {
 }
 
 export const sampleFunctionData = {
-  aboutCompany: '',
-  employeeFunction: '',
+  aboutCompany: 'O Grupo CCR, antiga Companhia de Concessões Rodoviárias, é uma empresa brasileira de concessão de infraestrutura, transportes e serviços, uma das líderes na administração de rodovias no Brasil, com um total de 3,955 km administrados e faz parte dos mais importantes índices do mercado acionário brasileiro',
+  employeeFunction: 'Sua missão será aprender e colocar em prática as rotinas de suporte aos times da CCR.',
   employeeResponsibilities: [
-    '',
+    'Auxiliar nas rotinas dos departamentos administrativos',
+    'Acompanhamento de relatórios',
+    'Elaborações de planilhas',
+    'Controle de arquivos',
   ],
 }

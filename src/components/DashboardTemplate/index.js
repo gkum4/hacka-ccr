@@ -28,7 +28,7 @@ const DashboardTemplate = ({ children }) => {
       </Header>
 
       <div>
-        <SideMenu>
+        <SideMenu currentHref={window.location.href.split('/')[window.location.href.split('/').length-1]}>
           <img src={profileImg} alt="Profile"/>
 
           <div>
@@ -36,27 +36,27 @@ const DashboardTemplate = ({ children }) => {
 
             <h2>{userData.role}</h2>
 
-            <Link>
+            <Link to='/function-description'>
               <img src={itemIcon} alt="item icon"/>
               <p>Descrição da Função</p>
             </Link>
 
-            <Link>
+            <Link to='/dashboard'>
               <img src={itemIcon} alt="item icon"/>
               <p>Plano de Carreira</p>
             </Link>
 
-            <Link>
+            <Link to='/dashboard'>
               <img src={itemIcon} alt="item icon"/>
               <p>Cursos</p>
             </Link>
 
-            <Link>
+            <Link to='/dashboard'>
               <img src={itemIcon} alt="item icon"/>
               <p>Desempenho Escolar</p>
             </Link>
 
-            <Link>
+            <Link to='/dashboard'>
               <img src={itemIcon} alt="item icon"/>
               <p>Capacitações</p>
             </Link>

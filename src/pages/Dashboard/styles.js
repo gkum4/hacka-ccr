@@ -91,7 +91,7 @@ export const CoursesContainer = styled.div`
   }
 
   > div {
-    width: ${window.innerWidth - sideMenuWidth}px;
+    width: ${window.innerWidth - sideMenuWidth - 80}px;
     height: 37vh;
     display: flex;
     flex-direction: row;
