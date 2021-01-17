@@ -1,8 +1,6 @@
-import React, { useMemo, useState, useCallback, useEffect } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import { format } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR';
 import Daypicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
@@ -53,9 +51,9 @@ const Appointment = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
-  const [monthAvailability, setMonthAvailability] = useState([]);
+  const monthAvailability = useMemo(() => [], []);
 
-  const [availableTimes, setAvailableTimes] = useState(sampleAvailableTimes);
+  const availableTimes = sampleAvailableTimes;
 
   const [titleText, setTitleText] = useState('');
   const [descriptionText, setDescriptionText] = useState('');
@@ -74,16 +72,6 @@ const Appointment = () => {
   const handleMonthChange = useCallback((month) => {
     setCurrentMonth(month);
   }, []);
-
-  const selectedDateAsText = useMemo(() => {
-    return format(selectedDate, "'Dia' dd 'de' MMMM", {
-      locale: ptBR,
-    });
-  }, [selectedDate]);
-
-  const selectedWeekDay = useMemo(() => {
-    return format(selectedDate, 'cccc', { locale: ptBR });
-  }, [selectedDate]);
 
   const disabledDays = useMemo(() => {
     const dates = monthAvailability
@@ -121,7 +109,7 @@ const Appointment = () => {
     });
 
     history.push('/dashboard');
-  }, [titleText, addAppointment, descriptionText, selectedTime]);
+  }, [descriptionText, selectedTime, titleText, addAppointment, selectedDate, addToast, history]);
 
   return (
     <Container>
