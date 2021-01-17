@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback } from 'react';
+import React, { useMemo, useState, useCallback, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import Daypicker from 'react-day-picker';
@@ -51,9 +51,9 @@ const Appointment = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
-  const monthAvailability = useMemo(() => [], []);
+  const [monthAvailability, setMonthAvailability] = useState([]);
 
-  const availableTimes = sampleAvailableTimes;
+  const [availableTimes, setAvailableTimes] = useState(sampleAvailableTimes);
 
   const [titleText, setTitleText] = useState('');
   const [descriptionText, setDescriptionText] = useState('');
@@ -62,6 +62,12 @@ const Appointment = () => {
   const { addAppointment } = useAppointment();
   const { addToast } = useToast();
   const history = useHistory();
+
+  useEffect(() => {  
+    setMonthAvailability([]);
+
+    setAvailableTimes(sampleAvailableTimes)
+  }, []);
 
   const hanldeDateChange = useCallback((day, modifiers) => {
     if (modifiers.available && !modifiers.disabled) {
