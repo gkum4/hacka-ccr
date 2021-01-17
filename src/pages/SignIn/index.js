@@ -40,9 +40,9 @@ const SignIn = () => {
           abortEarly: false,
         });
 
-        if(data.email !== 'test@mentora.com' && data.password !== '1234') {
-          throw new Error();
-        }      
+        // if(data.email !== 'test@mentora.com' && data.password !== '1234') {
+        //   throw new Error();
+        // }
         
         await signIn({
           email: data.email,
@@ -75,13 +75,19 @@ const SignIn = () => {
           <Form ref={formRef} onSubmit={handleSubmit}>
             <h1>Bem-vindo a sua plataforma de desenvolvimento pessoal.</h1>
             
-            <Input name="email" icon={FiMail} placeholder="email" />
+            <Input 
+              name="email" 
+              icon={FiMail} 
+              placeholder="email"
+              defaultValue="johnDoe@mentora.com"
+            />
             
             <Input
               name="password"
               icon={FiLock}
               type="password"
               placeholder="Senha"
+              defaultValue="123456"
             />
             <Button type="submit">Entrar</Button>
 
