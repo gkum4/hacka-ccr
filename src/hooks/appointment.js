@@ -8,7 +8,7 @@ const AppointmentProvider = ({ children }) => {
 
   const addAppointment = useCallback(
     ({ title, link, data }) => {
-      const id = uuid();   
+      const id = uuid();
 
       const obj = {
         id,        

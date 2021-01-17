@@ -3,18 +3,18 @@ import { animated } from 'react-spring';
 
 const toastTypeVariations = {
   info: css`
-    background: #ebf8ff;
+    background: #F0F0F0;
     color: #3172b7;
   `,
 
   success: css`
-    background: #e6fffa;
-    color: #2e656a;
+    background: #FF4A08;
+    color: #fff;
   `,
 
   error: css`
-    background: #fddede;
-    color: #c53030;
+    background: #B01D1D;
+    color: #fff;
   `,
 };
 
